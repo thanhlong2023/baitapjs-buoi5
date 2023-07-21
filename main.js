@@ -127,8 +127,8 @@ function tinhThue() {
 document.getElementById('ketQua4').onclick = tinhTienCap;
 function tinhTienCap() {
     var maKhachHang = DomID('maKhachHang').value;
-    var soKenhCap = DomID('soKenh').value;
-    var soKetNoi = DomID('soKetNoi').value;
+    var soKenhCap = Number(DomID('soKenh').value);
+    var soKetNoi = Number(DomID('soKetNoi').value);
     var loaiKhacHang = DomID('loaiKhacHang').value;
 
     //Nhà dân
@@ -147,14 +147,23 @@ function tinhTienCap() {
 
     //progress
     if (loaiKhacHang == 'user') {
-        tienCap = XU_LY_HOA_DON + DICH_VU_CO_BAN + THUE_KENH_CAO_CAP * soKenhCap;
-    } else if (loaiKhacHang == 'company') {
-        if (soKetNoi > 0 && soKetNoi <= 10) {
-            tienCap = XU_LY_HOA_DON_dn + DICH_VU_CO_BAN_dn + THUE_KENH_CAO_CAP_dn * soKenhCap;
-        } else if (soKetNoi > 10) {
-            tienCap = XU_LY_HOA_DON_dn + DICH_VU_CO_BAN_dn + KET_NOI_THEM * (soKetNoi - 10) + THUE_KENH_CAO_CAP_dn * soKenhCap;
+        if (soKenhCap >= 0) {
+            tienCap = XU_LY_HOA_DON + DICH_VU_CO_BAN + THUE_KENH_CAO_CAP * soKenhCap;
         } else {
-            alert('Không nhập số âm');
+            alert('Số lượng kênh cao cấp đang bị âm. Yêu cầu nhập đúng định dạng');
+        }
+
+    } else if (loaiKhacHang == 'company') {
+        if (soKenhCap >= 0) {
+            if (soKetNoi >= 0 && soKetNoi <= 10) {
+                tienCap = XU_LY_HOA_DON_dn + DICH_VU_CO_BAN_dn + THUE_KENH_CAO_CAP_dn * soKenhCap;
+            } else if (soKetNoi > 10) {
+                tienCap = XU_LY_HOA_DON_dn + DICH_VU_CO_BAN_dn + KET_NOI_THEM * (soKetNoi - 10) + THUE_KENH_CAO_CAP_dn * soKenhCap;
+            } else {
+                alert('Không nhập số âm');
+            }
+        } else {
+            alert('Số lượng kênh cao cấp đang bị âm. Yêu cầu nhập đúng định dạng');
         }
     } else {
         alert('Chưa chọn loại khách hàng');
