@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Css bootstrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1 class="text-center mb-5">Bài tập JS Cao Thành Long</h1>
+    <p class="text-center">
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample1" role="button"
+            aria-expanded="false" aria-controls="collapseExample">
+            Bài 1
+        </a>
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample2" role="button"
+            aria-expanded="false" aria-controls="collapseExample">
+            Bài 2
+        </a>
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample3" role="button"
+            aria-expanded="false" aria-controls="collapseExample">
+            Bài 3
+        </a>
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample4" role="button"
+            aria-expanded="false" aria-controls="collapseExample">
+            Bài 4
+        </a>
+
+    </p>
+    <div class="collapse" id="collapseExample1">
+        <div class="card card-body text-center">
+            <h2 class="text-center">Bài 1: Quản lý tuyển sinh</h2>
+            <div class="w-50 m-auto">
+                <div class="form-group d-flex justify-content-around">
+                    <input type="text" placeholder="Điểm chuẩn" class="form-control" id="diemChuan">
+                    <select name="" id="khuVuc" class="form-control">
+                        <option value="0">Chọn khu vực</option>
+                        <option value="2">A</option>
+                        <option value="1">B</option>
+                        <option value="0.5">C</option>
+                    </select>
+                    <select name="" id="doiTuong" class="form-control">
+                        <option value="0">Chọn đối tượng</option>
+                        <option value="2.5">1</option>
+                        <option value="1.5">2</option>
+                        <option value="1">3</option>
+                    </select>
+                </div>
+            </div>
+            <div class="w-50 m-auto">
+                <div class="form-group mt-4 d-flex justify-content-around">
+                    <input type="text" placeholder="Điểm môn 1" id="mon1" class="form-control">
+                    <input type="text" placeholder="Điểm môn 2" id="mon2" class="form-control">
+                    <input type="text" placeholder="Điểm môn 3" id="mon3" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-success" id="ketQua1">Kết quả</button>
+                <div class="alert alert-success" role="alert">
+                    👉<span id="txtResult"></span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="collapse" id="collapseExample2">
+        <div class="card card-body text-center">
+            <h2 class="text-center">Bài 2: Tính tiền điện</h2>
+            <div class="form-group">
+                <input type="text" placeholder="Nhập tên" id="ten">
+                <input type="text" placeholder="Nhập số KW" id="soKW">
+            </div>
+            <div class="form-group text-center mt-4">
+                <button class="btn btn-success" id="ketQua2">Kết quả</button>
+                <div class="alert alert-success" role="alert">
+                    👉<span id="txtResult2"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="collapse" id="collapseExample3">
+        <div class="card card-body">
+            <h2 class="text-center">Bài 3: Tính thuế thu nhập cá nhân</h2>
+            <div class="form-group text-center">
+                <input type="text" id="tenBai3" placeholder="Nhập họ tên">
+                <input type="number" id="tongThuNhapNam" placeholder="Tổng thu nhập năm">
+                <input type="number" id="soNguoiPhuThuoc" placeholder="Số người phụ thuộc">
+            </div>
+            <div class="form-group text-center mt-4">
+                <button class="btn btn-success" id="ketQua3">Kết quả</button>
+                <div class="alert alert-success" role="alert">
+                    👉<span id="txtResult3"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="collapse" id="collapseExample4">
+        <div class="card card-body">
+            <h2 class="text-center">Tính tiền cáp</h2>
+            <div class="form-group text-center">
+                <select name="" id="loaiKhacHang">
+                    <option value="">Chọn loại khách hàng</option>
+                    <option value="user">Nhà dân</option>
+                    <option value="company">Doanh nghiệp</option>
+                </select>
+                <input type="text" placeholder="Nhập mã khách hàng" id="maKhachHang">
+                <input type="text" placeholder="Số kênh cao cấp" id="soKenh">
+                <div class="form-group d-flex justify-content-center mt-2">
+                    <input type="text" placeholder="Số kết nối" id="soKetNoi" style="display: none;">
+                </div>
+
+            </div>
+            <div class="form-group text-center mt-4">
+                <button class="btn btn-success" id="ketQua4">Tính tiền cáp</button>
+                <div class="alert alert-success" role="alert">
+                    👉<span id="txtResult4"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- bootstrap  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
