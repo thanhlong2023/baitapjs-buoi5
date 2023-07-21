@@ -96,24 +96,28 @@ function tinhThue() {
     //progress
     var thuNhapChiuThue = tongThuNhap - 4000000 - 1600000 * soNguoiPhuThuoc;
     var giamDonVi = thuNhapChiuThue / trieu;
-
-    if (giamDonVi > 0 && giamDonVi <= 60) {
-        tienThue = thuNhapChiuThue * lv1;
-    } else if (giamDonVi > 60 && giamDonVi <= 120) {
-        tienThue = thuNhapChiuThue * lv2;
-    } else if (giamDonVi > 120 && giamDonVi <= 210) {
-        tienThue = thuNhapChiuThue * lv3;
-    } else if (giamDonVi > 210 && giamDonVi <= 384) {
-        tienThue = thuNhapChiuThue * lv4;
-    } else if (giamDonVi > 384 && giamDonVi <= 624) {
-        tienThue = thuNhapChiuThue * lv5;
-    } else if (giamDonVi > 624 && giamDonVi <= 960) {
-        tienThue = thuNhapChiuThue * lv6;
-    } else if (giamDonVi > 960) {
-        tienThue = thuNhapChiuThue * lv7;
+    if (soNguoiPhuThuoc <= 0) {
+        alert('Nhập số người phù hợp')
     } else {
-        alert('Vui lòng nhập số hợp lệ');
+        if (giamDonVi > 0 && giamDonVi <= 60) {
+            tienThue = thuNhapChiuThue * lv1;
+        } else if (giamDonVi > 60 && giamDonVi <= 120) {
+            tienThue = thuNhapChiuThue * lv2;
+        } else if (giamDonVi > 120 && giamDonVi <= 210) {
+            tienThue = thuNhapChiuThue * lv3;
+        } else if (giamDonVi > 210 && giamDonVi <= 384) {
+            tienThue = thuNhapChiuThue * lv4;
+        } else if (giamDonVi > 384 && giamDonVi <= 624) {
+            tienThue = thuNhapChiuThue * lv5;
+        } else if (giamDonVi > 624 && giamDonVi <= 960) {
+            tienThue = thuNhapChiuThue * lv6;
+        } else if (giamDonVi > 960) {
+            tienThue = thuNhapChiuThue * lv7;
+        } else {
+            alert('Vui lòng nhập số hợp lệ');
+        }
     }
+
 
     tienThue = new Intl.NumberFormat("vn-VN").format(tienThue);
     //in ra màn hình
