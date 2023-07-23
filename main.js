@@ -68,7 +68,7 @@ function tinhTienDien() {
     } else {
         alert('Không nhập số âm')
     }
-
+    tongTienDien = new Intl.NumberFormat("vn-VN").format(tongTienDien);
     //In ra màn hình
     DomID('txtResult2').innerHTML = 'Họ tên: ' + ten + ' - Tiền điện của bạn là: ' + tongTienDien;
 }
@@ -96,10 +96,10 @@ function tinhThue() {
     //progress
     var thuNhapChiuThue = tongThuNhap - 4000000 - 1600000 * soNguoiPhuThuoc;
     var giamDonVi = thuNhapChiuThue / trieu;
-    if (soNguoiPhuThuoc <= 0) {
+    if (soNguoiPhuThuoc < 0) {
         alert('Nhập số người phù hợp')
     } else {
-        if (giamDonVi > 0 && giamDonVi <= 60) {
+        if (giamDonVi >= 0 && giamDonVi <= 60) {
             tienThue = thuNhapChiuThue * lv1;
         } else if (giamDonVi > 60 && giamDonVi <= 120) {
             tienThue = thuNhapChiuThue * lv2;
